@@ -94,6 +94,19 @@
  #define V_DAC_C (float)2.2857f
  #define V_ADC_K (float)13.131f
  #define V_ADC_C (float)-111.9f
+#elif defined(DPS3003)
+ #ifndef CONFIG_DPS_MAX_CURRENT
+  #define CONFIG_DPS_MAX_CURRENT (3000)
+ #endif
+ #define ADC_CHA_IOUT_GOLDEN_VALUE  (0x00)
+ #define A_ADC_K (float)1.010f
+ #define A_ADC_C (float)-1.85f
+ #define A_DAC_K (float)1.11f
+ #define A_DAC_C (float)254.f
+ #define V_DAC_K (float)0.124f
+ #define V_DAC_C (float)1.85f
+ #define V_ADC_K (float)8.122f
+ #define V_ADC_C (float)-100.751f
 #else
  #error "Please set MODEL to the device you want to build for"
 #endif // MODEL
